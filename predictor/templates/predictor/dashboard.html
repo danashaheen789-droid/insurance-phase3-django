@@ -1,0 +1,7 @@
+{% extends 'predictor/base.html' %}{% load static %}{% block content %}
+<div class="card"><h2>Insurance Dashboard</h2><p>This page visualizes insights from the processed and enriched insurance dataset.</p></div>
+<div class="card"><h3>Average Charges by Smoking Status</h3><img src="{% static 'predictor/charts/avg_charges_by_smoker.png' %}" alt="Average charges by smoker"></div>
+<div class="card"><h3>Average Charges by BMI Category</h3><img src="{% static 'predictor/charts/avg_charges_by_bmi.png' %}" alt="Average charges by BMI category"></div>
+<div class="card"><h3>Average Charges by Risk Category</h3><img src="{% static 'predictor/charts/avg_charges_by_risk.png' %}" alt="Average charges by risk category"></div>
+<div class="card"><h3>Recent Prediction Records Stored by ORM</h3><table><tr><th>Age</th><th>BMI</th><th>Smoker</th><th>Region</th><th>Predicted Charge</th></tr>{% for item in recent_predictions %}<tr><td>{{ item.age }}</td><td>{{ item.bmi }}</td><td>{{ item.smoker }}</td><td>{{ item.region }}</td><td>{{ item.predicted_charge }}</td></tr>{% empty %}<tr><td colspan="5">No predictions yet.</td></tr>{% endfor %}</table></div>
+{% endblock %}

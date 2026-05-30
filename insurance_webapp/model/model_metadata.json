@@ -1,0 +1,55 @@
+{
+    "project_title": "Medical Insurance Cost Analysis Using Data Science",
+    "target": "charges",
+    "features": [
+        "age",
+        "sex",
+        "bmi",
+        "children",
+        "smoker",
+        "region",
+        "high_bmi_flag",
+        "smoker_flag",
+        "age_risk_flag",
+        "risk_score",
+        "risk_category",
+        "bmi_category",
+        "region_temperature_c",
+        "region_humidity_percent",
+        "region_wind_speed"
+    ],
+    "numeric_features": [
+        "age",
+        "bmi",
+        "children",
+        "high_bmi_flag",
+        "smoker_flag",
+        "age_risk_flag",
+        "risk_score",
+        "region_temperature_c",
+        "region_humidity_percent",
+        "region_wind_speed"
+    ],
+    "categorical_features": [
+        "sex",
+        "smoker",
+        "region",
+        "risk_category",
+        "bmi_category"
+    ],
+    "best_model": "Linear Regression",
+    "evaluation_results": [
+        {
+            "Model": "Linear Regression",
+            "RMSE": 3446.42,
+            "MAE": 2681.82,
+            "R2 Score": 0.8871
+        },
+        {
+            "Model": "Random Forest Regressor",
+            "RMSE": 3615.75,
+            "MAE": 2866.89,
+            "R2 Score": 0.8757
+        }
+    ]
+}

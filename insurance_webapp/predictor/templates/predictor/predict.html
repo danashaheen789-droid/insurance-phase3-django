@@ -1,0 +1,4 @@
+{% extends 'predictor/base.html' %}{% block content %}
+<div class="card"><h2>Predict Medical Insurance Cost</h2><form method="post">{% csrf_token %}{{ form.as_p }}<button type="submit">Predict Cost</button></form></div>
+{% if prediction %}<div class="card"><h3>Prediction Result</h3><p class="prediction">Estimated charge: ${{ prediction }}</p></div>{% endif %}
+{% endblock %}

@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: insurance-cost-webapp
+    env: python
+    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate
+    startCommand: gunicorn config.wsgi
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: False
+      - key: ALLOWED_HOSTS
+        value: insurance-cost-webapp.onrender.com,localhost,127.0.0.1
